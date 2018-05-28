@@ -1,5 +1,5 @@
 # Path
-A class made in PHP7 inspired by nodes path module, for modified and creating path strings, aswell as read folder/file information
+A class made in PHP7 inspired by nodes path module, for modify and create path strings, also read folder/file information
 
 Resolve path
 ```php
