@@ -1,7 +1,6 @@
 {
   "name": "labcake/path",
   "description": "A class made in PHP7 inspired by nodes path module, for modify and create path strings, also read folder/file information.",
-  "minimum-stability": "stable",
   "license" : "Apache-2.0",
   "autoload": {
     "psr-4": {
