@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A class made in PHP7 inspired by nodes path module, for modify and create path strings, also read folder/file information
+ * A class made in PHP inspired by nodes path module, for modify and create path strings, also read folder/file information
  * @author LabCake
  * @copyright 2018 LabCake
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -38,7 +38,7 @@ class Path
      * @param int $options
      * @return array|string
      */
-    public static function parse(string $path, int $options = PATHINFO_DIRNAME | PATHINFO_BASENAME | PATHINFO_EXTENSION | PATHINFO_FILENAME)
+    public static function parse($path, $options = PATHINFO_DIRNAME | PATHINFO_BASENAME | PATHINFO_EXTENSION | PATHINFO_FILENAME)
     {
         return pathinfo($path, $options);
     }
@@ -48,7 +48,7 @@ class Path
      * @param string $path
      * @return string
      */
-    public static function extname(string $path)
+    public static function extname($path)
     {
         return self::parse($path, PATHINFO_EXTENSION);
     }
@@ -58,7 +58,7 @@ class Path
      * @param string $path
      * @return null|string
      */
-    public static function mimetype(string $path)
+    public static function mimetype($path)
     {
         return self::exists($path) ? mime_content_type($path) : null;
     }
@@ -68,7 +68,7 @@ class Path
      * @param $path
      * @return string
      */
-    public static function dirname(string $path)
+    public static function dirname($path)
     {
         return dirname($path);
     }
@@ -79,7 +79,7 @@ class Path
      * @param null|string $suffix [optional]
      * @return string
      */
-    public static function basename(string $path, $suffix = null)
+    public static function basename($path, $suffix = null)
     {
         return basename($path, $suffix);
     }
@@ -89,7 +89,7 @@ class Path
      * @param string $path
      * @return bool
      */
-    public static function exists(string $path)
+    public static function exists($path)
     {
         return file_exists($path);
     }
@@ -99,7 +99,7 @@ class Path
      * @param $target
      * @return bool
      */
-    public static function mkdir(string $target)
+    public static function mkdir($target)
     {
         $target = rtrim($target, self::$SEPERATOR);
         if (empty($target))
@@ -131,7 +131,7 @@ class Path
      * @param string $dirPath
      * @return bool
      */
-    public static function rmdir(string $dirPath)
+    public static function rmdir($dirPath)
     {
         if (!is_dir($dirPath))
             return false;
