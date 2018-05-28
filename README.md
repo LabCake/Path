@@ -9,7 +9,7 @@ Path::resolve("hello", "world");
 
 Basename
 ```php
-Path::resolve("test.php");
+Path::basename("test.php");
 ```
 
 Dirname
