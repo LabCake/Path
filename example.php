@@ -1,6 +1,10 @@
 <?php
 
-include_once "Path.php";
+/**
+ * Example file on how to use the Path library
+ */
+
+include_once "src/Path.php";
 
 // Resolve root path of this file
 $root = LabCake\Path::resolve(\LabCake\Path::dirname(__FILE__)); // return example: /var/www/

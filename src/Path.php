@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A class made in PHP7 inspired by nodes path module, for modified and creating path strings, aswell as read folder/file information
+ * A class made in PHP7 inspired by nodes path module, for modify and create path strings, also read folder/file information
  * @author LabCake
  * @copyright 2018 LabCake
  * @license http://www.apache.org/licenses/LICENSE-2.0

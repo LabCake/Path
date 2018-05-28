@@ -1,0 +1,10 @@
+{
+  "name": "LabCake/Path",
+  "description": "A class made in PHP7 inspired by nodes path module, for modify and create path strings, also read folder/file information.",
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "LabCake": "src/"
+    }
+  }
+}
