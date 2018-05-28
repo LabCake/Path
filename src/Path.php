@@ -29,7 +29,7 @@ class Path
         $dir = self::dirname($path);
         $ext = self::extname($path);
 
-        return ($dir !== "." ? self::$SEPERATOR . trim($dir, self::$SEPERATOR) . self::$SEPERATOR : "") . ($ext ? $basename : $basename . self::$SEPERATOR);
+        return ($dir !== "." ? trim($dir, self::$SEPERATOR) . self::$SEPERATOR : "") . ($ext ? $basename : $basename . self::$SEPERATOR);
     }
 
     /**
