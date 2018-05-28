@@ -101,7 +101,7 @@ class Path
      */
     public static function mkdir(string $target)
     {
-        $target = rtrim($target, '/');
+        $target = rtrim($target, self::$SEPERATOR);
         if (empty($target))
             $target = '/';
         if (file_exists($target))
@@ -117,9 +117,9 @@ class Path
         }
         if (@mkdir($target, $dir_perms, true)) {
             if ($dir_perms != ($dir_perms & ~umask())) {
-                $folder_parts = explode('/', substr($target, strlen($target_parent) + 1));
+                $folder_parts = explode(self::$SEPERATOR, substr($target, strlen($target_parent) + 1));
                 for ($i = 1, $c = count($folder_parts); $i <= $c; $i++) {
-                    @chmod($target_parent . '/' . implode('/', array_slice($folder_parts, 0, $i)), $dir_perms);
+                    @chmod($target_parent . self::$SEPERATOR . implode(self::$SEPERATOR, array_slice($folder_parts, 0, $i)), $dir_perms);
                 }
             }
             return true;
@@ -136,10 +136,10 @@ class Path
         if (!is_dir($dirPath))
             return false;
 
-        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-            $dirPath .= '/';
+        if (substr($dirPath, strlen($dirPath) - 1, 1) != self::$SEPERATOR) {
+            $dirPath .= self::$SEPERATOR;
         }
-        $files = glob($dirPath . '*', GLOB_MARK);
+        $files = glob($dirPath . '{,.}[!.,!..]*', GLOB_MARK);
         foreach ($files as $file) {
             if (is_dir($file)) {
                 self::rmdir($file);
